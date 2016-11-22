@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index 3</title>
+
+    <!--inicio do css -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
+    <!-- fim do css -->
+
+    <!-- inicio do js -->
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+
+    <script src="app/config/pd-app.js"></script>
+    <script src="app/controller/index-watch.controller.js"></script>
+    <script src="app/service/alert.service.js"></script>
+    <script src="app/filter/maiusculo.filter.js"></script>
+</head>
+<body ng-app="pdApp">
+
+    <div ng-controller="IndexWatchController" class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label>Cor</label>
+                    <input type="text" class="form-control" ng-model="cor">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Classe CSS</label>
+                    <select class="form-control"
+                            ng-model="classeCss">
+                        <option value="verde">Verde</option>
+                        <option value="azul">Azul</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12"
+                ng-style="styleDiv">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12"
+                 ng-style="styleDiv"
+                ng-class="classeCss">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

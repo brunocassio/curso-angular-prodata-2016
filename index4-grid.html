@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Index 4 Grid</title>
 
     <!--inicio do css -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.css">
     <link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.css">
     <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="node_modules/angular-ui-grid/ui-grid.css">
     <!-- fim do css -->
 
     <!-- inicio do js -->
@@ -21,6 +22,7 @@
     <script src="app/controller/cadastro-carro.controller.js"></script>
     <script src="app/service/alert.service.js"></script>
     <script src="app/filter/maiusculo.filter.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
     <!-- fim do js -->
 </head>
 <body ng-app="pdApp" class="container">
@@ -43,13 +45,13 @@
                             <input type="text"
                                    class="form-control"
                                    ng-model="entidade.nomeCarro"
-                                    ng-required="true"
-                                    ng-minlength="3"
-                                    ng-maxlength="20"
-                                    name="nomeCarro">
+                                   ng-required="true"
+                                   ng-minlength="3"
+                                   ng-maxlength="20"
+                                   name="nomeCarro">
                             <div ng-messages="carroForm.nomeCarro.$error"
-                                ng-if="carroForm.nomeCarro.$touched"
-                                class="text-danger">
+                                 ng-if="carroForm.nomeCarro.$touched"
+                                 class="text-danger">
                                 <div ng-messages-include="app/template/input-ng-messages.html"></div>
                             </div>
                         </div>
@@ -57,7 +59,7 @@
 
                     <div class="col-md-3">
                         <div class="form-group"
-                                ng-class="{'has-error' : carroForm.cor.$touched && carroForm.cor.$invalid}">
+                             ng-class="{'has-error' : carroForm.cor.$touched && carroForm.cor.$invalid}">
                             <label class="control-label">Cor</label>
                             <input type="text"
                                    class="form-control"
@@ -65,11 +67,11 @@
                                    ng-required="true"
                                    ng-minlength="3"
                                    ng-maxlength="20"
-                                    name="cor"
-                                    >
+                                   name="cor"
+                            >
                             <div ng-messages="carroForm.cor.$error"
                                  ng-if="carroForm.cor.$touched"
-                                class="text-danger">
+                                 class="text-danger">
                                 <div ng-messages-include="app/template/input-ng-messages.html"></div>
                             </div>
                         </div>
@@ -98,18 +100,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table">
-                            <tr>
-                                <th>Nome do carro</th>
-                                <th>Cor</th>
-                                <th>Data de lançamento</th>
-                            </tr>
-                            <tr ng-repeat="carro in listaCarros">
-                                <td ng-bind="carro.nomeCarro"></td>
-                                <td ng-bind="carro.cor | maiusculo"></td>
-                                <td ng-bind="carro.dataLancamento | date : 'dd/MM/yyyy'"></td>
-                            </tr>
-                        </table>
+                        <div ui-grid="gridOptions"></div>
                     </div>
                 </div>
             </div>
