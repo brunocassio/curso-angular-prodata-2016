@@ -2,9 +2,11 @@ angular.module('pdApp').controller('IndexController', IndexController);
 
 function IndexController($scope) {
 
-    $scope.nome = 'Bruno';
+    var ic = this;
 
-    $scope.ola = ola;
+    ic.nome = 'Bruno';
+
+    ic.ola = ola;
 
     function ola() {
         alert('olá');

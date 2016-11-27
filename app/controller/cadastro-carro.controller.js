@@ -8,6 +8,7 @@ function CadastroCarroController($scope, toastr, AlertService) {
 
     $scope.entidade = {};
     $scope.listaCarros = [];
+    $scope.country={};
 
     $scope.salvar = salvar;
     $scope.limpar = limpar;
