@@ -14,14 +14,6 @@
         var vm = this;
         vm.entidade = {};
 
-        $scope.countries = [
-            {name:'Vereinigte Arabische Emirate', value:'AE'},
-            {name:'Andorra', value:'AD'},
-        ];
-
-        $scope.country = $scope.countries[1];
-
-
         vm.salvar = salvar;
         vm.limpar = limpar;
         vm.excluir = excluir;
