@@ -4,7 +4,7 @@
 
         angular.module('pdApp',
             [
-            'ngMessages',
+                'ngMessages',
                 'ngAnimate',
                 'toastr',
                 'ui.grid',
@@ -15,5 +15,3 @@
                 'pdAppArquitetura'
             ]);
 })();
-
-
