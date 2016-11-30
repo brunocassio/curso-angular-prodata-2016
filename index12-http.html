@@ -14,34 +14,39 @@
     <!-- fim do css -->
 
     <!-- inicio do js -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-aria/angular-aria.js"></script>
     <script src="node_modules/angular-material/angular-material.js"></script>
     <script src="node_modules/angular-messages/angular-messages.js"></script>
     <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
-
     <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
+    <script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
+
     <script src="app/config/pd-app.js"></script>
+
     <script src="arquitetura/directivas/pd-input-text/pd-input-text-directive.js"></script>
     <script src="arquitetura/directivas/pd-crud/pd-crud.directive.js"></script>
     <script src="arquitetura/directivas/pd-panel/pd-panel.directive.js"></script>
-    <script src="app/controller/cadastro-carro.controller.js"></script>
-    <script src="app/controller/index-router.controller.js"></script>
+    <script src="arquitetura/directivas/pd-select/pd-select.directive.js"></script>
+
+    <script src="app/config/pd-rotas.config.js"></script>
+    <script src="app/controller/index12-http.controller.js"></script>
     <script src="app/service/alert.service.js"></script>
     <script src="app/filter/maiusculo.filter.js"></script>
-    <script src="node_modules/angular-ui-grid/ui-grid.js"></script>
-    <script src="app/config/pd-rotas.config.js"></script>
-    <script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
-    <script src="node_modules/oclazyload/dist/ocLazyLoad.js"></script>
-    <script src="app/controller/index.controller.js"></script>
-    <script src="app/controller/index11-storage.js"></script>
-    <script src="app/controller/index12-http.controller.js"></script>
     <!-- fim do js -->
 </head>
-<body ng-app="pdApp" class="container" ng-controller="IndexController as ic">
+<body ng-app="pdApp"
+      class="container"
+      ng-controller="IndexController as vm">
 
-<button ng-click="ic.carregarDados()">Teste</button>
-<div ui-grid="gridOptions"></div>
+        <button class="btn btn-primary"
+                ng-click="vm.carregarDados()">Carregar Dados
+        </button>
+
+        <div ui-grid="vm.gridOptions"></div>
 </body>
 </html>
