@@ -11,24 +11,27 @@
     function pdSelect() {
 
         return {
-            template: 'arquitetura/directivas/pd-select/pd-select.html',
             restrict: 'E',
+            templateUrl: 'arquitetura/directivas/pd-select/pd-select.html',
             scope: {
-                selectedValue: '='
+                ngModel: '=',
+                ngRequired: '=',
+                provider: '=',
+                propriedadeDescricao: '@',
+                propriedadeValor: '@',
+                colspan: '@',
+                label: '@'
             },
             link: link
         };
 
 
         function link(scope, element, attrs) {
-            scope.countries = [{
-                name: 'Vereinigte Arabische Emirate',
-                value: 'AE'
-            }, {
-                name: 'Andorra',
-                value: 'AD'
-            }, ];
-            scope.selectedValue = scope.countries[1];
+            scope.idInputSelect = 'pdSelect' + scope.$id;
+            scope.classColspan = 'col-md-'+ (scope.colspan || 3);
+
+            scope.propriedadeDescricao = scope.propriedadeDescricao || 'descricao';
+            scope.propriedadeValor = scope.propriedadeValor || 'valor';
         }
     }
 })();
